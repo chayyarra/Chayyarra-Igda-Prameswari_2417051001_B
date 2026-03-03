@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Login</title>
+    <title>Super Mario Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Press Start 2P', cursive; /* Font retro */
         }
 
         body {
@@ -18,88 +19,117 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+            /* Warna biru langit khas stage awal Mario */
+            background-color: #5c94fc; 
+            /* Tambahan aksen tanah hijau di bagian bawah layar */
+            border-bottom: 40px solid #00a800; 
         }
 
         .login-container {
-            width: 350px;
-            padding: 50px 40px 40px 40px;
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(15px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            padding: 50px 30px 30px 30px;
+            /* Warna khas blok bata/koin Mario */
+            background: #f89020; 
+            /* Border tebal ala game retro */
+            border: 4px solid #000; 
+            /* Shadow solid untuk efek 3D pixel */
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.7); 
             text-align: center;
-            color: #fff;
+            color: #000;
             position: relative;
         }
 
         .logo {
             position: absolute;
-            top: -40px;
+            top: -35px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: white;
+            width: 70px;
+            height: 70px;
+            background: #fff;
+            border: 4px solid #000;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 35px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            font-size: 30px;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.7);
         }
 
         .login-container h2 {
             margin-bottom: 25px;
-            font-weight: 600;
+            font-size: 16px;
+            color: #fff;
+            text-shadow: 2px 2px 0px #000; /* Shadow teks agar lebih terbaca */
+            line-height: 1.5;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 10px;
+            margin-bottom: 5px;
+            color: #000;
+            font-weight: bold;
         }
 
         .login-container input {
             width: 100%;
             padding: 12px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 12px;
+            border: 4px solid #000;
             outline: none;
-            background: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
+            background: #fff;
+            font-size: 12px;
+            box-shadow: inset 2px 2px 0px rgba(0,0,0,0.2);
         }
 
         .login-container input:focus {
-            box-shadow: 0 0 10px #ff9ad5;
+            background: #ffffcc; /* Berubah agak kuning saat diklik */
+        }
+
+        /* Grouping Tanggal dan Waktu agar bersebelahan */
+        .datetime-group {
+            display: flex;
+            gap: 10px;
         }
 
         .login-container button {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             margin-top: 15px;
-            border: none;
-            border-radius: 12px;
-            background: #ff6ec7;
+            border: 4px solid #000;
+            /* Warna merah Mario */
+            background: #e52521; 
             color: white;
-            font-weight: bold;
+            font-size: 14px;
             cursor: pointer;
-            transition: 0.3s;
+            box-shadow: 4px 4px 0px #000;
+            transition: 0.1s;
+            text-transform: uppercase;
         }
 
-        .login-container button:hover {
-            background: #ff4eb5;
-            transform: scale(1.05);
+        .login-container button:active {
+            /* Efek tombol ditekan */
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #000;
         }
 
         .extra {
-            margin-top: 15px;
-            font-size: 13px;
+            margin-top: 20px;
+            font-size: 10px;
         }
 
         .extra a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            font-weight: 600;
+            text-shadow: 1px 1px 0px #000;
         }
 
         .extra a:hover {
-            text-decoration: underline;
+            color: #ffffcc;
         }
     </style>
 </head>
@@ -108,20 +138,41 @@
 
     <div class="login-container">
         <div class="logo">
-            💖
+            ⭐
         </div>
 
-        <h2>Sweet Login</h2>
+        <h2>DATA<br>PLAYER 1</h2>
 
         <form>
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <button type="submit">Login</button>
+            <div class="input-group">
+                <label>NAMA</label>
+                <input type="text" placeholder="NAMA KAMU">
+            </div>
+            
+            <div class="input-group">
+                <label>NPM</label>
+                <input type="number" placeholder="12345678">
+            </div>
+
+            <div class="input-group">
+                <label>KELAS</label>
+                <input type="text" placeholder="A / B / C">
+            </div>
+
+            <div class="datetime-group">
+                <div class="input-group" style="flex: 1;">
+                    <label>TANGGAL</label>
+                    <input type="date">
+                </div>
+                <div class="input-group" style="flex: 1;">
+                    <label>WAKTU</label>
+                    <input type="time">
+                </div>
+            </div>
+
+            <button type="submit">SUBMIT</button>
         </form>
 
-        <div class="extra">
-            Belum punya akun? <a href="#">Daftar</a>
-        </div>
     </div>
 
 </body>
